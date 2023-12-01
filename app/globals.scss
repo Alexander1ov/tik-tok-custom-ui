@@ -1,0 +1,28 @@
+// @import url(./fonts.scss);
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 400;
+  src: url("../fonts/SpaceMono-Regular.ttf");
+}
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 700;
+  src: url("../fonts/SpaceMono-Bold.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
