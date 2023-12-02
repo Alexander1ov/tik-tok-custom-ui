@@ -1,18 +1,12 @@
-import Image from 'next/image'
-import styles from './page.module.scss'
+import Image from "next/image";
+import "./globals.scss";
+import VideoFeed from "@/components/Feed/Feed";
 
-export default function Home() {
+export default function Feed() {
   return (
-    <main className={styles.main}>
-
-    <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    <main>
+      <h2>Лента</h2>
+      <VideoFeed />
     </main>
-  )
+  );
 }
