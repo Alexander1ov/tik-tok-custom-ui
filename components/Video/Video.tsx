@@ -1,11 +1,13 @@
+"use client"
 import React, { FC, useState } from "react";
+import Link from "next/link";
 import ReactPlayer from "react-player";
+import { OnProgressProps } from "react-player/base";
+
+import VideoLoadAnim from "../VideoLoadAnim/VideoLoadAnim";
+import VideoPlayButton from "../VideoPlayButton/VideoPlayButton";
 
 import styles from "./Video.module.scss";
-import { OnProgressProps } from "react-player/base";
-import Link from "next/link";
-import Image from "next/image";
-
 interface VideoProps {
   id: string;
   url: string;
@@ -24,7 +26,7 @@ const Video: FC<VideoProps> = ({ id, url }) => {
     setProgress(played * 100);
   };
   return (
-    <div className={`${styles.video} ${plays ? styles.plays : "playing"}`}>
+    <div className={`${styles.video} ${plays ? styles.plays : ""}`}>
       <Link href={`/video/${id}`}>
         <ReactPlayer
           width={"100%"}
@@ -36,36 +38,16 @@ const Video: FC<VideoProps> = ({ id, url }) => {
           onReady={() => setReady(true)}
         />
       </Link>
-      <div className={styles.startStopVideo} onClick={() => setPlays(!plays)}>
-        {/* написать пнормальную функцию для setPlays*/}
-        {plays ? (
-          <Image
-            src="/video/play.png"
-            alt="Next.js Logo"
-            width={30}
-            height={30}
-            priority
-          />
-        ) : (
-          <Image
-            src="/video/stop.png"
-            alt="Next.js Logo"
-            width={30}
-            height={30}
-            priority
-          />
-        )}
-        {!ready && (
-          <Image
-            src="/video/search.png"
-            alt="Next.js Logo"
-            width={30}
-            height={30}
-            priority
-          />
-        )}
-      </div>
-
+      {ready ? (
+        <button
+          className={styles.startStopVideo}
+          onClick={() => setPlays(!plays)}
+        >
+          <VideoPlayButton play={plays} />
+        </button>
+      ) : (
+        <VideoLoadAnim />
+      )}
       <div className={styles.progress}>
         <div style={{ width: `${progress}%` }}></div>
       </div>

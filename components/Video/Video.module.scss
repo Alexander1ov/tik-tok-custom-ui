@@ -1,9 +1,22 @@
+.video {
+  position: relative;
+  width: 100%;
+}
+.startStopVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  border: none;
+  transform: translate(-50%, -50%);
+}
 .progress {
+  margin: auto;
   background-color: #1ca0ff;
-//   width: 100%;
-  height: 2px;
-  div{
+  width: 405px;
+  height: 3px;
+  div {
     background-color: red;
-    height: 2px;
+    height: 3px;
   }
 }
