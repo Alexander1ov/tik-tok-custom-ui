@@ -3,23 +3,22 @@ import React, { FC } from "react";
 import { VideoPosts } from "@/types/types";
 import PostAuthor from "../PostAuthor/PostAuthor";
 import Video from "../Video/Video";
-import VideoDetails from "../VideoDeteils/VideoDetails";
+import VideoDetails from "../VideoDetails/VideoDetails";
+import Music from "../UI/VideoDetailsSvg/Music";
 
 import styles from "./Post.module.scss";
 
 const Post: FC<VideoPosts> = ({
-  //не только для поста, но и для поиска его сделать
   video_id,
   title,
   author,
   play,
-  music,
+  music_info,
   play_count,
   digg_count,
   comment_count,
   share_count,
 }) => {
-  //ЗДЕСЬ СДЕЛАЮ МАССИВ С ИКОНКАМИ, ЧТОБЫ ПОТОМ НАКИНУТЬ НА УПРАВЛЕНИЕ ВИДЕО...но это не точно
   return (
     <article className={styles.post}>
       <PostAuthor
@@ -37,13 +36,14 @@ const Post: FC<VideoPosts> = ({
           shareCount={share_count}
         />
       </div>
-      <div className={styles.music}>
-        <span>Original:</span>
-        {/* <MusicNote/> */}
-        <p className={styles.musicName}>{music}</p>
-      </div>
+      <div className={styles.info}>
+        <div className={styles.music}>
+          <Music className={styles.svg} />
+          <p className={styles.musicName}>{music_info.title}</p>
+        </div>
 
-      <div className={styles.title}>{title}</div>
+        <div className={styles.title}>{title}</div>
+      </div>
     </article>
   );
 };

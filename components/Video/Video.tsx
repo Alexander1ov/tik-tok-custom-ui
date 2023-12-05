@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { FC, useState } from "react";
 import Link from "next/link";
 import ReactPlayer from "react-player";

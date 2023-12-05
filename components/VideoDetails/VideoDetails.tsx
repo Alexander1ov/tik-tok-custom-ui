@@ -1,8 +1,12 @@
-import React, { FC } from "react";
+import { FC } from "react";
+
+import { formatNumber } from "@/constants/formatNumber";
+import Heart from "../UI/VideoDetailsSvg/Heart";
+import Comment from "../UI/VideoDetailsSvg/Comment";
+import Bookmark from "../UI/VideoDetailsSvg/Bookmark";
+import Forward from "../UI/VideoDetailsSvg/Forward";
 
 import styles from "./VideoDetails.module.scss";
-import { formatNumber } from "@/constants/formatNumber";
-
 interface VideoDetailsProps {
   playCount: number;
   diggCount: number;
@@ -19,22 +23,22 @@ const VideoDetails: FC<VideoDetailsProps> = ({
   const indicators = [
     {
       id: "01",
-      img: `${process.env.PUBLIC_URL}/playCount.svg`,
+      img: Heart,
       amount: playCount,
     },
     {
       id: "02",
-      img: `${process.env.PUBLIC_URL}/commentCount.svg`,
+      img: Comment,
       amount: commentCount,
     },
     {
       id: "03",
-      img: `${process.env.PUBLIC_URL}/diggCount.svg`,
+      img: Bookmark,
       amount: diggCount,
     },
     {
       id: "04",
-      img: `${process.env.PUBLIC_URL}/shareCount.svg`,
+      img: Forward,
       amount: shareCount,
     },
   ];
@@ -43,8 +47,8 @@ const VideoDetails: FC<VideoDetailsProps> = ({
     <ul className={styles.details}>
       {indicators.map((elem) => (
         <li key={elem.id}>
-          {/* <img src={elem.img} alt="" /> */}
-          <p>{formatNumber(elem.amount).toLowerCase()}</p>
+          <elem.img className={styles.svg} />
+          <p>{formatNumber(elem.amount)}</p>
         </li>
       ))}
     </ul>

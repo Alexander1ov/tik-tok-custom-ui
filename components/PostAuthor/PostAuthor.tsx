@@ -1,7 +1,8 @@
 import React, { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./PostAuthor.module.scss";
-import Link from "next/link";
 
 interface PostAuthorProps {
   id: string;
@@ -11,15 +12,21 @@ interface PostAuthorProps {
 
 const PostAuthor: FC<PostAuthorProps> = ({ id, name, avatar }) => {
   return (
-    <Link href={`/user/${id}`} className={styles.author}>
-      <div className={styles.avatar}>
-        {/* <img src={avatar} alt="" /> */}
-      </div>
-      <div className={styles.info}>
-        <p>{name}</p>
-        <p>{id}</p>
-      </div>
-    </Link>
+    <>
+      <Link href={`/user/${id}`}>
+        <Image
+          className={styles.avatar}
+          src={avatar}
+          alt="avatar"
+          width={55}
+          height={55}
+        />
+        <p className={styles.name}>{name}</p>
+        <div className={styles.info}>
+          <p>@{id}</p>
+        </div>
+      </Link>
+    </>
   );
 };
 

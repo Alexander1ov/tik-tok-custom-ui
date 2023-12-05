@@ -9,6 +9,21 @@
   font-weight: 700;
   src: url("../fonts/SpaceMono-Bold.ttf");
 }
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  src: url("../fonts/Inter-Medium.ttf");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 700;
+  src: url("../fonts/ProximaNova-Bold.otf");
+}
+@font-face {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  src: url("../fonts/ProximaNova-Regular.ttf");
+}
 
 * {
   box-sizing: border-box;
@@ -39,7 +54,7 @@ main {
   max-width: 1500px;
   width: 100%;
   color: #000000;
-  h2{
+  h2 {
     text-align: center;
   }
 }
