@@ -18,8 +18,25 @@
   background-color: black;
   transition: background-color 0.2s;
 }
-
 .play {
+  @include button;
+  &:before {
+    @include pauseEl(35%);
+  }
+  &:after {
+    @include pauseEl(60%);
+  }
+  &:hover {
+    border-color: #ec3e3c;
+    &:before {
+      background-color: #ec3e3c;
+    }
+    &::after {
+      background-color: #ec3e3c;
+    }
+  }
+}
+.pause {
   @include button;
 
   &:before {
@@ -36,24 +53,6 @@
     border-color: #ec3e3c;
     &:before {
       border-left-color: #ec3e3c;
-    }
-  }
-}
-.pause {
-  @include button;
-  &:before {
-    @include pauseEl(35%);
-  }
-  &:after {
-    @include pauseEl(60%);
-  }
-  &:hover {
-    border-color: #ec3e3c;
-    &:before {
-      background-color: #ec3e3c;
-    }
-    &::after {
-      background-color: #ec3e3c;
     }
   }
 }

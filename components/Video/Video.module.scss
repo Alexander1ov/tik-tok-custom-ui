@@ -1,6 +1,12 @@
 .video {
   position: relative;
   margin: auto;
+  &:hover {
+    .VideoPlayButton {
+      visibility: visible;
+      animation: visibilityBtn 0.5s ease-in;
+    }
+  }
 }
 .startStopVideo {
   position: absolute;
@@ -18,5 +24,17 @@
   div {
     background-color: red;
     height: 3px;
+  }
+}
+.VideoPlayButton {
+  visibility: hidden;
+}
+
+@keyframes visibilityBtn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

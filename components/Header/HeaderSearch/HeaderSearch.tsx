@@ -4,7 +4,9 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { ROUTES } from "../../constants/routes";
+
+import { ROUTES } from "../../../constants/routes";
+
 import style from "./HeaderSearch.module.scss";
 
 type Inputs = {

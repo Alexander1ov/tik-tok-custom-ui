@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { VideoPosts } from "@/types/types";
 import PostAuthor from "../PostAuthor/PostAuthor";
 import Video from "../Video/Video";
-import VideoDetails from "../VideoDetails/VideoDetails";
+import VideoDetails from "../Video/VideoDetails/VideoDetails";
 import Music from "../UI/VideoDetailsSvg/Music";
 
 import styles from "./Post.module.scss";

@@ -1,18 +1,10 @@
-import Image from 'next/image'
-// import styles from './page.module.scss'
+import Search from "@/components/Search/Search";
+import "../globals.scss";
 
-export default function Search() {
+export default function PageSearch() {  
   return (
-    <main >
-
-    <Image
-        //   className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-    </main>
+    <main>
+    <Search />
+  </main>
   )
 }

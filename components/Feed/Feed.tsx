@@ -1,10 +1,10 @@
-"use client";
+// "use client";
 import { FC } from "react";
 import { useVideoFeed } from "@/hooks/useVideoFeed";
 import Post from "../Post/Post";
 import { videoState } from "@/constants/videoState";
 import style from "./Feed.module.scss";
-import { request } from "@/utils/request";
+import { request } from "@/api/request";
 import { Feed, VideoPosts } from "@/types/types";
 
 // async function getVideoFeed() {
@@ -14,7 +14,8 @@ import { Feed, VideoPosts } from "@/types/types";
 //   return response;
 // }
 
-export default  function VideoFeed() {
+export default  function Feed() {
+  
   // const { data, isLoading } = useVideoFeed();
   const data = videoState; //т.к количество запросов ограничено
   // const data: VideoPosts[] = await getVideoFeed()

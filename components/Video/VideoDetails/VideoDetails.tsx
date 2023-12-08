@@ -1,10 +1,10 @@
 import { FC } from "react";
 
 import { formatNumber } from "@/constants/formatNumber";
-import Heart from "../UI/VideoDetailsSvg/Heart";
-import Comment from "../UI/VideoDetailsSvg/Comment";
-import Bookmark from "../UI/VideoDetailsSvg/Bookmark";
-import Forward from "../UI/VideoDetailsSvg/Forward";
+import Heart from "../../UI/VideoDetailsSvg/Heart";
+import Comment from "../../UI/VideoDetailsSvg/Comment";
+import Bookmark from "../../UI/VideoDetailsSvg/Bookmark";
+import Forward from "../../UI/VideoDetailsSvg/Forward";
 
 import styles from "./VideoDetails.module.scss";
 interface VideoDetailsProps {

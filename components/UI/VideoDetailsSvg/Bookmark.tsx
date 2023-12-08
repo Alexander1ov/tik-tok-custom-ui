@@ -13,8 +13,8 @@ const Bookmark: FC<{ className: string }> = ({ className }) => {
       viewBox="0 -10 533.333 533.333"
       fill="#fff"
       stroke="black"
-      stroke-width="20"
-      stroke-linecap="round"
+      strokeWidth="20"
+      strokeLinecap="round"
     >
       <path d="M100,0v533.333l166.667-166.666l166.667,166.666V0H100z" />
     </svg>

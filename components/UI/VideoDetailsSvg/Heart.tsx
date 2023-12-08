@@ -26,8 +26,8 @@ const Heart: FC<{ className: string }> = ({ className }) => {
 610 -531 478 -1170 773 -1878 867 -146 20 -562 34 -677 24z"
           fill="#fff"
           stroke="black"
-          stroke-width="500"
-          stroke-linecap="round"
+          strokeWidth="500"
+          strokeLinecap="round"
         />
       </g>
     </svg>

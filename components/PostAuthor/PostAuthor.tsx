@@ -20,6 +20,7 @@ const PostAuthor: FC<PostAuthorProps> = ({ id, name, avatar }) => {
           alt="avatar"
           width={55}
           height={55}
+          priority
         />
         <p className={styles.name}>{name}</p>
         <div className={styles.info}>

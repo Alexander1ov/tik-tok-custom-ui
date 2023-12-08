@@ -23,6 +23,10 @@ export interface Feed {
   processed_time: number;
 }
 
+export interface Search extends Omit<Feed, "data"> {
+  data: { cursor: number; hasMore: boolean; videos: Array<VideoPosts> };
+}
+
 export interface VideoPosts {
   aweme_id: string;
   video_id: string;

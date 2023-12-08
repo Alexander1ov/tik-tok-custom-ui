@@ -1,12 +1,11 @@
-import Image from "next/image";
 import "./globals.scss";
-import VideoFeed from "@/components/Feed/Feed";
+import Feed from "@/components/Feed/Feed";
 
-export default function PageFirst() {
+export default function PageFeed() {
   return (
     <main>
       <h2>Лента</h2>
-      <VideoFeed />
+      <Feed />
     </main>
   );
 }
