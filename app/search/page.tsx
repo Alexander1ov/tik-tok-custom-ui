@@ -1,5 +1,5 @@
 import Search from "@/components/Search/Search";
-import "../globals.scss";
+// import "../globals.scss";
 
 export default function PageSearch() {  
   return (

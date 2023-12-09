@@ -1,0 +1,48 @@
+.section {
+  margin: 50px auto;
+}
+.profile {
+  margin: auto;
+  width: fit-content;
+  .avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    img {
+      border-radius: 50%;
+      border: solid 2px #fe2c55;
+      vertical-align: top;
+    }
+  }
+  .info {
+    width: 400px;
+    word-break: break-all;
+    overflow: hidden;
+    h3 {
+      font-family: "Proxima Nova";
+      font-size: 40px;
+      font-weight: 700;
+
+      -webkit-line-clamp: 2; /* Число отображаемых строк */
+      display: -webkit-box; /* Включаем флексбоксы */
+      -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    }
+    p {
+      margin-top: 10px;
+      font-family: "Inter";
+      font-size: 30px;
+      font-weight: 400;
+
+      -webkit-line-clamp: 3; /* Число отображаемых строк */
+      display: -webkit-box; /* Включаем флексбоксы */
+      -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    }
+  }
+  .statistic {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

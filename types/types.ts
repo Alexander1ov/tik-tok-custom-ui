@@ -1,32 +1,3 @@
-// export interface FeedPost {
-//   video_id: string;
-//   title: string;
-//   author: {
-//     unique_id: string;
-//     nickname: string;
-//     avatar: string;
-//   };
-//   play: string;
-//   music_info: {
-//     title: string;
-//   };
-//   play_count: number;
-//   digg_count: number;
-//   comment_count: number;
-//   share_count: number;
-// }
-
-export interface Feed {
-  code: number;
-  data: Array<VideoPosts>;
-  msg: string;
-  processed_time: number;
-}
-
-export interface Search extends Omit<Feed, "data"> {
-  data: { cursor: number; hasMore: boolean; videos: Array<VideoPosts> };
-}
-
 export interface VideoPosts {
   aweme_id: string;
   video_id: string;
@@ -72,4 +43,59 @@ export interface VideoPosts {
     avatar: string;
   };
   is_top: number;
+}
+// export interface FeedPost {
+//   video_id: string;
+//   title: string;
+//   author: {
+//     unique_id: string;
+//     nickname: string;
+//     avatar: string;
+//   };
+//   play: string;
+//   music_info: {
+//     title: string;
+//   };
+//   play_count: number;
+//   digg_count: number;
+//   comment_count: number;
+//   share_count: number;
+// }
+
+export interface UserInfo {
+  stats: {
+    diggCount: number;
+    followerCount: number;
+    followingCount: number;
+    heart: number;
+    heartCount: number;
+    videoCount: number;
+  };
+  user: {
+    avatarMedium: string;
+    id: string;
+    ins_id: string;
+    nickname: string;
+    signature: string;
+    uniqueId: string;
+    youtube_channel_id: string;
+    youtube_channel_title: string;
+    privateAccount: boolean;
+    openFavorite: boolean;
+  };
+}
+
+export interface Feed {
+  code: number;
+  data: Array<VideoPosts>;
+  msg: string;
+  processed_time: number;
+}
+
+export interface Search extends Omit<Feed, "data"> {
+  data: { cursor: number; hasMore: boolean; videos: Array<VideoPosts> };
+}
+
+export interface UserData extends Omit<Feed, "data"> {
+  data: UserInfo;
 }
