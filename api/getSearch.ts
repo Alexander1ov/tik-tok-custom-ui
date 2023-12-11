@@ -5,7 +5,7 @@ export const getSearch = async ({
   keywords,
   cursor,
 }: {
-  keywords: string|null;
+  keywords: string | null;
   cursor: number | undefined;
 }): Promise<Search> => {
   const response = await request({

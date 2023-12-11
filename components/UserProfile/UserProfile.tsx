@@ -9,6 +9,7 @@ import { replaceBr } from "@/constants/replaceBr";
 import styles from "./UserProfile.module.scss";
 
 import { userState } from "@/constants/userState";
+import UserWall from "./UserWall/UserWall";
 
 const UserProfile: FC<{ id: string }> = ({ id }) => {
   // const { data, code, error, isLoading } = useUser(id);
@@ -27,7 +28,7 @@ const UserProfile: FC<{ id: string }> = ({ id }) => {
     },
     {
       id: "03",
-      title: "Likes",
+      title: "Лайки",
       quantity: data?.stats.heartCount,
     },
     {
@@ -76,10 +77,9 @@ const UserProfile: FC<{ id: string }> = ({ id }) => {
         </div>
       </div>
       {!data?.user.privateAccount ? (
-        <div></div>
+        <UserWall openFavorite={data?.user.openFavorite} />
       ) : (
-        // <Здесь будет компонента со стеной пользователя />
-        <span>Аккаунт приватный</span>
+        <span>Закрытый аккаунт</span>
       )}
     </section>
   );

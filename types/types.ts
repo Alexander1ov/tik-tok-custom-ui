@@ -99,3 +99,11 @@ export interface Search extends Omit<Feed, "data"> {
 export interface UserData extends Omit<Feed, "data"> {
   data: UserInfo;
 }
+
+export interface UserVideo extends Omit<Feed, "data"> {
+  data: {
+    cursor: string;
+    hasMore: boolean;
+    videos: Array<VideoPosts>;
+  };
+}

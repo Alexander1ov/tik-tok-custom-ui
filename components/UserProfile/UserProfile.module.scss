@@ -1,9 +1,9 @@
 .section {
   margin: 50px auto;
+  width: 720px;
 }
 .profile {
   margin: auto;
-  width: fit-content;
   .avatar {
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@
     gap: 20px;
     img {
       border-radius: 50%;
-      border: solid 2px #fe2c55;
+      // border: solid 2px #fe2c55;
       vertical-align: top;
     }
   }
@@ -40,9 +40,34 @@
     }
   }
   .statistic {
+    margin: 20px auto;
+    width: 95%;
+    list-style-type: none;
+    text-align: center;
+
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
+    span {
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 30px;
+    }
+    p {
+      font-family: "Proxima Nova";
+      font-weight: 400;
+      font-size: 23px;
+      color: #999999;
+    }
+  }
+  .status {
+    line-height: 1.5;
+    word-break: break-all;
+    -webkit-line-clamp: 7; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden;
   }
 }
+

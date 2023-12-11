@@ -1,0 +1,41 @@
+.titleWall {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+
+  cursor: pointer;
+  font-family: "Inter";
+  font-size: 25px;
+  color: #848484;
+  h4 {
+    font-weight: 500;
+  }
+
+  .active {
+    color: rgb(254, 44, 85);
+  }
+}
+.line {
+  position: relative;
+  right: 55px;
+
+  margin: auto;
+  width: 830px;
+  height: 2px;
+  background: #999999;
+}
+
+.wall {
+  margin-top: 30px;
+
+  .contentHidden {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    font-family: "Proxima Nova";
+    font-size: 25px;
+  }
+}
