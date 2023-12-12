@@ -1,3 +1,4 @@
+import UserLiked from "@/components/UserProfile/UserWall/UserLiked/UserLiked";
 import UserVideos from "@/components/UserProfile/UserWall/UserVideos/UserVideos";
 
 export const userWall = [
@@ -9,7 +10,7 @@ export const userWall = [
   {
     name: "liked",
     title: "Лайкнул(-а)",
-    content: UserVideos,
+    content: UserLiked,
   },
 ];
 

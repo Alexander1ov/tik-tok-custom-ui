@@ -1,4 +1,3 @@
-import Feed from "@/components/Feed/Feed";
 import UserProfile from "@/components/UserProfile/UserProfile";
 
 interface PageUserProps {

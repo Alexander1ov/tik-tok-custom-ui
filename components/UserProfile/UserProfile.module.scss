@@ -70,4 +70,13 @@
     overflow: hidden;
   }
 }
+.contentHidden {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 
+  font-family: "Proxima Nova";
+  font-size: 25px;
+}

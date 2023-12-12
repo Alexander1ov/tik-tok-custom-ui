@@ -8,7 +8,7 @@ import { replaceBr } from "@/constants/replaceBr";
 
 import styles from "./UserProfile.module.scss";
 
-import { userState } from "@/constants/userState";
+import { userState } from "@/constants/fakeState/userState";
 import UserWall from "./UserWall/UserWall";
 
 const UserProfile: FC<{ id: string }> = ({ id }) => {
@@ -79,7 +79,10 @@ const UserProfile: FC<{ id: string }> = ({ id }) => {
       {!data?.user.privateAccount ? (
         <UserWall openFavorite={data?.user.openFavorite} />
       ) : (
-        <span>Закрытый аккаунт</span>
+        <div className={styles.contentHidden}>
+          <Image width={150} height={150} src="/lock.svg" alt="lock" />
+          <span>Это закрытый аккаунт, невозможно отобразить ленту :(</span>
+        </div>
       )}
     </section>
   );

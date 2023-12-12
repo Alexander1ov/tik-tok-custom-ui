@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { videoState } from "@/constants/videoState";
+import { videoState } from "@/constants/fakeState/videoState";
 import { useVideoSearch } from "@/hooks/useVideoSearch";
 
 import Post from "@/components/Post/Post";

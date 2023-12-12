@@ -17,7 +17,7 @@ export const userState = {
     secret: false,
     ftc: false,
     relation: 0,
-    openFavorite: false,
+    openFavorite: true,
     commentSetting: null,
     duetSetting: null,
     stitchSetting: null,

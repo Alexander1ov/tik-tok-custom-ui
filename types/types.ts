@@ -44,24 +44,6 @@ export interface VideoPosts {
   };
   is_top: number;
 }
-// export interface FeedPost {
-//   video_id: string;
-//   title: string;
-//   author: {
-//     unique_id: string;
-//     nickname: string;
-//     avatar: string;
-//   };
-//   play: string;
-//   music_info: {
-//     title: string;
-//   };
-//   play_count: number;
-//   digg_count: number;
-//   comment_count: number;
-//   share_count: number;
-// }
-
 export interface UserInfo {
   stats: {
     diggCount: number;
@@ -84,6 +66,15 @@ export interface UserInfo {
     openFavorite: boolean;
   };
 }
+export interface Comment {
+  id: number;
+  text: string;
+  create_time: number;
+  digg_count: number;
+  reply_total: number;
+  user: { unique_id: string; nickname: string; avatar: string };
+  status: number;
+}
 
 export interface Feed {
   code: number;
@@ -105,5 +96,18 @@ export interface UserVideo extends Omit<Feed, "data"> {
     cursor: string;
     hasMore: boolean;
     videos: Array<VideoPosts>;
+  };
+}
+
+export interface VideoOrigin extends Omit<Feed, "data"> {
+  data: VideoPosts;
+}
+
+export interface CommentsFetch extends Omit<Feed, "data"> {
+  data: {
+    total: number;
+    cursor: string;
+    hasMore: boolean;
+    comments: Array<Comment>;
   };
 }
