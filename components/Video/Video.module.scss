@@ -1,0 +1,40 @@
+.video {
+  position: relative;
+  margin: auto;
+  &:hover {
+    .VideoPlayButton {
+      visibility: visible;
+      animation: visibilityBtn 0.5s ease-in;
+    }
+  }
+}
+.startStopVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  border: none;
+  transform: translate(-50%, -50%);
+}
+.progress {
+  margin: auto;
+  background-color: #1ca0ff;
+  // width: 405px;
+  height: 3px;
+  div {
+    background-color: red;
+    height: 3px;
+  }
+}
+.VideoPlayButton {
+  visibility: hidden;
+}
+
+@keyframes visibilityBtn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
