@@ -11,8 +11,8 @@ interface SearchCursorProps {
 }
 
 const SearchCursor: FC<SearchCursorProps> = ({ cursor, search }) => {
-  // const { data, isLoading, next } = useVideoSearch(search, cursor);
-  const data = videoState; //т.к количество запросов ограничено
+  const { data, isLoading, next } = useVideoSearch(search, cursor);
+  // const data = videoState; //т.к количество запросов ограничено
 
   return (
     <>

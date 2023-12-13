@@ -30,7 +30,6 @@ const Search: FC = () => {
     if (!search) return;
     router.push(`${ROUTES.SEARCH}?query=${search}`, { scroll: false });
   };
-  console.log(isMatch);
 
   useEffect(() => {
     if (isMatch) return;

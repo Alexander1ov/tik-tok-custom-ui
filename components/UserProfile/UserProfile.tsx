@@ -12,9 +12,10 @@ import { userState } from "@/constants/fakeState/userState";
 import UserWall from "./UserWall/UserWall";
 
 const UserProfile: FC<{ id: string }> = ({ id }) => {
-  // const { data, code, error, isLoading } = useUser(id);
-  const data = userState;
-  const isLoading = true;
+  const { data, code, error, isLoading } = useUser(id);
+  if(!data)return <div>Нет данных</div>
+  // const data = userState;
+  // const isLoading = true;
   const count = [
     {
       id: "01",
@@ -40,8 +41,8 @@ const UserProfile: FC<{ id: string }> = ({ id }) => {
 
   return (
     <section className={styles.section}>
-      {/* {isLoading && <div>Loading...</div>} */}
-      {/* {code === -1 && <div>{error || "Пользователь не найден"}</div>} */}
+      {isLoading && <div>Loading...</div>}
+      {code === -1 && <div>{error || "Пользователь не найден"}</div>}
 
       <div className={styles.profile}>
         <div className={styles.avatar}>

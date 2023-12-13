@@ -15,9 +15,8 @@ const UserLiked: FC = () => {
   const [cursor, setCursor] = useState(0);
   const { id } = useParams();
 
-//   const { data, isLoading, error } = useUserFavorite(id, cursor);
-    const data = userWallState;
-  console.log(data);
+  const { data, isLoading, error } = useUserFavorite(id, cursor);
+    // const data = userWallState;
 
   useEffect(() => {
     const currentVideo = data?.data.videos || [];
@@ -25,8 +24,8 @@ const UserLiked: FC = () => {
     setItems((prev) => [...prev, ...currentVideo]);
   }, [data]);
 
-  // if (isLoading) return <span>Загрузка</span>;
-  // if (error || data.code === -1) return <span>Ошибка</span>; // или data.msg
+  if (isLoading) return <span>Загрузка</span>;
+  if (error ) return <span>Ошибка</span>; // или data.msg
 
   const handleLoadMore = () => {
     setCursor(Number(data?.data.cursor));

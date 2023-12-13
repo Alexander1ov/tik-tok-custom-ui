@@ -15,9 +15,8 @@ const UserVideos: FC = () => {
   const [cursor, setCursor] = useState(0);
   const { id } = useParams();
 
-  //   const {  data, isLoading, error  } =useUserVideo(id, cursor)
-  const data = userWallState;
-  console.log(data);
+  const { data, isLoading, error } = useUserVideo(id, cursor);
+  // const data = userWallState;
 
   useEffect(() => {
     const currentVideo = data?.data.videos || [];
@@ -25,8 +24,9 @@ const UserVideos: FC = () => {
     setItems((prev) => [...prev, ...currentVideo]);
   }, [data]);
 
-  // if (isLoading) return <span>Загрузка</span>;
-  // if (error || data.code === -1) return <span>Ошибка</span>; // или data.msg
+  if (!data) return <div>Нет данных</div>;
+  if (isLoading) return <span>Загрузка</span>;
+  if (error || data.code === -1) return <span>Ошибка</span>; // или data.msg
 
   const handleLoadMore = () => {
     setCursor(Number(data.data.cursor));
